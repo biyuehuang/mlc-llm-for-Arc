@@ -1,0 +1,19 @@
+conda create --name mlc-llm python=3.11
+
+conda activate mlc-llm
+
+git clone --recursive https://github.com/mlc-ai/mlc-llm/
+
+cd mlc-llm/
+
+pip install mlc_ai_nightly-0.12.dev1610-cp311-cp311-manylinux_2_28_x86_64.whl
+
+pip install mlc_chat_nightly-0.1.dev426-cp311-cp311-manylinux_2_28_x86_64.whl
+
+pip install --pre --upgrade bigdl-llm[xpu] -f https://developer.intel.com/ipex-whl-stable-xpu 
+
+source /opt/intel/oneapi/setvars.sh
+
+python build.py --model /path/to/Llama-2-7b-chat-hf --target cuda --quantization q4f16_1 --artifact-path "./dist" --use-cache 0 --max-seq-len 1024
+
+python benchmark.py

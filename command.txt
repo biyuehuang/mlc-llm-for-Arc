@@ -14,6 +14,6 @@ pip install --pre --upgrade bigdl-llm[xpu] -f https://developer.intel.com/ipex-w
 
 source /opt/intel/oneapi/setvars.sh
 
-python build.py --model /path/to/Llama-2-7b-chat-hf --target cuda --quantization q4f16_1 --artifact-path "./dist" --use-cache 0 --max-seq-len 1024
+python build.py --model /LLM/Llama-2-7b-chat-hf/ --target vulkan --quantization q4f16_1 --artifact-path "./dist" --use-cache 0 --max-seq-len 1024
 
 python benchmark.py

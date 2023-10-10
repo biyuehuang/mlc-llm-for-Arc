@@ -6,6 +6,11 @@ git clone --recursive https://github.com/mlc-ai/mlc-llm/
 
 cd mlc-llm/
 
+## download wheel from https://mlc.ai/wheels
+## or use this cmd to install 
+## pip install --pre --force-reinstall -f https://mlc.ai/wheels mlc-ai-nightly 
+## document:   https://llm.mlc.ai/docs/install/tvm.html
+
 pip install mlc_ai_nightly-0.12.dev1610-cp311-cp311-manylinux_2_28_x86_64.whl
 
 pip install mlc_chat_nightly-0.1.dev426-cp311-cp311-manylinux_2_28_x86_64.whl
